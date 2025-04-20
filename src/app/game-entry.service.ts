@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { GameEntry } from './models/GameEntry';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 export class GameEntryService {
   constructor(private http: HttpClient) {}
 
-  getEntries(): Observable<any> {
-    return this.http.get('http://localhost:8080/gameEntry/all'); 
+  getEntries(): Observable<GameEntry[]> {
+    return this.http.get<GameEntry[]>('http://localhost:8080/gameEntry/all'); 
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameEntryService } from '../game-entry.service';
+import { GameEntry } from '../models/GameEntry';
 
 @Component({
   selector: 'app-game-entry',
@@ -7,7 +8,7 @@ import { GameEntryService } from '../game-entry.service';
   styleUrls: ['./game-entry.component.css']
 })
 export class GameEntryComponent implements OnInit {
-  entryData: any;
+  entryData: GameEntry[]= [];
   constructor(private gameEntryService: GameEntryService){}
 
   ngOnInit(): void {
