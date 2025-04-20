@@ -1,1 +1,6 @@
 <p>game-entry works!</p>
+<ul>
+    <li *ngFor="let item of entryData">
+        <strong>{{ item.name }}</strong> - {{item.entryDate}}
+    </li>
+</ul>
